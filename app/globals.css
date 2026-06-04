@@ -24,3 +24,27 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes aurora {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(50px, -50px) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(0px, 0px) rotate(360deg);
+  }
+}
+
+.aurora-bg {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 9999px;
+  filter: blur(120px);
+  opacity: 0.15;
+  animation: aurora 20s infinite linear;
+}
