@@ -1,18 +1,11 @@
 "use client";
 
 import Particles from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
-import { useCallback } from "react";
 
 export default function ParticlesBackground() {
-  const particlesInit = useCallback(async (engine: any) => {
-    await loadSlim(engine);
-  }, []);
-
   return (
     <Particles
       id="tsparticles"
-      init={particlesInit}
       options={{
         fullScreen: {
           enable: false,
