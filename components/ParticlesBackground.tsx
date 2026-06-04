@@ -1,7 +1,7 @@
 "use client";
 
-import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim";
+import Particles from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 import { useCallback } from "react";
 
 export default function ParticlesBackground() {
