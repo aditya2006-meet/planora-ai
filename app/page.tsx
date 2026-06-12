@@ -410,9 +410,9 @@ export default function Home() {
         />
       </div>
 
-      {/* Mouse Glow */}
+      {/* Mouse Glow — desktop only, stays at 0,0 on touch */}
       <div
-        className="pointer-events-none absolute z-0 rounded-full transition-all duration-500"
+        className="pointer-events-none absolute z-0 rounded-full transition-all duration-500 hidden md:block"
         style={{
           width: 500,
           height: 500,
@@ -444,17 +444,17 @@ export default function Home() {
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="fixed left-1/2 top-5 z-50 w-[92%] max-w-7xl -translate-x-1/2"
+        className="fixed left-1/2 top-4 z-50 w-[94%] max-w-7xl -translate-x-1/2"
       >
         <div
-          className="glass-card rounded-full px-6 py-4 flex items-center justify-between"
+          className="glass-card rounded-full px-4 py-3 sm:px-6 sm:py-4 flex items-center justify-between"
           style={{ border: "1px solid rgba(255,255,255,0.18)" }}
         >
-          <span className="font-space text-2xl font-bold tracking-widest text-gradient">
+          <span className="font-space text-xl sm:text-2xl font-bold tracking-widest text-gradient">
             PLANORA
           </span>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Light/Dark toggle */}
             <button
               onClick={() => setLightMode((m) => !m)}
@@ -508,7 +508,7 @@ export default function Home() {
 
             <button
               onClick={scrollToForm}
-              className="btn-primary rounded-full px-6 py-2.5 text-sm"
+              className="btn-primary rounded-full px-4 py-2 text-xs sm:px-6 sm:py-2.5 sm:text-sm hidden sm:inline-flex"
             >
               ✦ Start Planning
             </button>
@@ -517,7 +517,7 @@ export default function Home() {
       </motion.nav>
 
       {/* ═══ HERO ═══ */}
-      <section className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pt-32 text-center">
+      <section className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 sm:px-6 pt-24 sm:pt-32 text-center">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -540,7 +540,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
           className="font-space font-bold leading-none tracking-tight"
-          style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)" }}
+          style={{ fontSize: "clamp(2.2rem, 10vw, 9rem)" }}
         >
           <span style={{ color: "var(--text-primary)" }}>PLAN THE</span>
           <br />
@@ -554,7 +554,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="mt-8 max-w-2xl text-lg leading-relaxed"
+          className="mt-6 max-w-2xl text-sm sm:text-lg leading-relaxed px-2 sm:px-0"
           style={{ color: "var(--text-secondary)" }}
         >
           Generate cinematic AI-powered itineraries, discover hidden gems,
@@ -570,12 +570,12 @@ export default function Home() {
         >
           <button
             onClick={scrollToForm}
-            className="btn-primary rounded-2xl px-10 py-4 text-base"
+            className="btn-primary rounded-2xl px-7 py-3 text-sm sm:px-10 sm:py-4 sm:text-base"
           >
             ✦ Start Planning
           </button>
           <button
-            className="rounded-2xl px-10 py-4 text-base font-medium transition-all duration-200"
+            className="rounded-2xl px-7 py-3 text-sm sm:px-10 sm:py-4 sm:text-base font-medium transition-all duration-200"
             style={{
               background: "rgba(255,255,255,0.04)",
               border: "1px solid rgba(255,255,255,0.12)",
@@ -599,12 +599,12 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="mt-16 flex gap-12 justify-center"
+          className="mt-10 flex gap-6 sm:gap-12 justify-center"
         >
           {STATS.map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="font-space text-3xl font-bold text-gradient">{stat.value}</div>
-              <div className="mt-1 text-xs" style={{ color: "var(--text-muted)" }}>
+              <div className="font-space text-2xl sm:text-3xl font-bold text-gradient">{stat.value}</div>
+              <div className="mt-1 text-[10px] sm:text-xs" style={{ color: "var(--text-muted)" }}>
                 {stat.label}
               </div>
             </div>
@@ -710,7 +710,7 @@ export default function Home() {
               AI GENERATOR
             </div>
             <h2
-              className="font-space text-4xl font-bold"
+              className="font-space text-2xl sm:text-4xl font-bold"
               style={{ color: "var(--text-primary)" }}
             >
               Generate Your AI Journey
@@ -722,7 +722,7 @@ export default function Home() {
 
           {/* Form Card */}
           <div
-            className="glass-card rounded-3xl p-8 md:p-10"
+            className="glass-card rounded-3xl p-4 sm:p-8 md:p-10"
             style={{
               border: "1px solid rgba(0,212,255,0.12)",
               boxShadow: "0 0 60px rgba(0,212,255,0.05), 0 0 120px rgba(155,89,255,0.04)",
@@ -818,7 +818,7 @@ export default function Home() {
                 id="generate-btn"
                 onClick={generateTrip}
                 disabled={loading}
-                className="btn-primary rounded-2xl px-14 py-4 text-base"
+                className="btn-primary rounded-2xl w-full sm:w-auto px-8 py-3.5 sm:px-14 sm:py-4 text-sm sm:text-base"
               >
                 {loading ? (
                   <span className="flex items-center gap-3">
@@ -943,7 +943,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="mt-12 overflow-hidden rounded-3xl"
+                className="mt-12 overflow-hidden rounded-2xl sm:rounded-3xl"
                 style={{
                   border: "1px solid rgba(255,255,255,0.08)",
                   background: "rgba(255,255,255,0.03)",
@@ -951,7 +951,7 @@ export default function Home() {
                 }}
               >
                 {/* Hero Image */}
-                <div className="relative h-72 w-full overflow-hidden">
+                <div className="relative h-44 sm:h-72 w-full overflow-hidden">
                   <img
                     src={`https://loremflickr.com/1200/500/${encodeURIComponent(destination || "travel")},travel`}
                     alt={destination}
@@ -961,8 +961,8 @@ export default function Home() {
                     }}
                   />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(5,8,17,0.9) 0%, rgba(5,8,17,0.3) 50%, transparent 100%)" }} />
-                  <div className="absolute bottom-6 left-8 right-8">
-                    <h2 className="font-space text-3xl font-bold" style={{ color: "white" }}>
+                  <div className="absolute bottom-3 left-4 right-4 sm:bottom-6 sm:left-8 sm:right-8">
+                    <h2 className="font-space text-lg sm:text-3xl font-bold" style={{ color: "white" }}>
                       {result.title}
                     </h2>
                     <div
@@ -974,7 +974,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="p-8">
+                <div className="p-4 sm:p-8">
                   {/* Download + Share Buttons */}
                   <div className="mb-8 flex items-center gap-3 flex-wrap">
                     <button
@@ -1138,8 +1138,8 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="relative z-10 mt-8 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="grid gap-12 md:grid-cols-4">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10 sm:py-16">
+          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
             <div className="md:col-span-1">
               <span className="font-space text-2xl font-bold tracking-widest text-gradient">PLANORA</span>
               <p className="mt-3 text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
