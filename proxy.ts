@@ -1,12 +1,12 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
-import type { NextRequest } from "next/server";
+import type { NextRequest, NextFetchEvent } from "next/server";
 
 // Next.js 16: uses proxy.ts instead of middleware.ts
 // Export must be named "proxy" (not "middleware")
 const clerkHandler = clerkMiddleware();
 
-export async function proxy(request: NextRequest) {
-  return clerkHandler(request);
+export async function proxy(request: NextRequest, event: NextFetchEvent) {
+  return clerkHandler(request, event);
 }
 
 export const config = {
