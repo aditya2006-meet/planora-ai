@@ -574,25 +574,8 @@ export default function Home() {
           >
             ✦ Start Planning
           </button>
-          <button
-            className="rounded-2xl px-7 py-3 text-sm sm:px-10 sm:py-4 sm:text-base font-medium transition-all duration-200"
-            style={{
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(255,255,255,0.12)",
-              color: "var(--text-primary)",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.08)";
-              (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(0,212,255,0.3)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.04)";
-              (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.12)";
-            }}
-          >
-            Watch Demo
-          </button>
         </motion.div>
+
 
         {/* Stats */}
         <motion.div
